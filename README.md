@@ -6,7 +6,7 @@ It contains basic test currently
 Technologies/Tools used:
 1. Protractor
 2. Typescript
-3. log
+3. log4js
 
 
 Mandatory Installations before executing:
