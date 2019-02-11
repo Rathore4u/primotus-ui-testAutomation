@@ -4,6 +4,8 @@ import {RandomHelper} from '../../../components/misc-utils/random-helper';
 
 export class FormBuilder {
 
+    public static _uuid = RandomHelper.randomString(8);
+
     static get form() {
         return element(By.xpath(`.//div[text()="${FormBuilderPageConstant.formName}"]`));
     }
@@ -32,15 +34,10 @@ export class FormBuilder {
         return element(By.css('i.fa-folder-open-o'));
     }
 
-    static get uuid() {
-        return {
-            uuid: RandomHelper.randomString(8),
-        };
-    }
-
     static get formDetails() {
+        console.log(this._uuid.toString());
         return {
-            newFormName: `qa-${FormBuilder.uuid.uuid}-${FormBuilderPageConstant.formName}}`
+            newFormName: `qa-${this._uuid.toString()}-${FormBuilderPageConstant.formName}}`
         };
     }
 
@@ -60,7 +57,7 @@ export class FormBuilder {
         return {
             root: element(By.id('filterStatusHeader')),
             options: {
-                all: element(By.css('#filterStatusBody [value="all"]')),
+                all: element(By.xpath('//div[@id="filterStatusBody"]/div/div/label')),
                 drafts: element(By.css('#filterStatusBody [value="drafts"]')),
                 published: element(By.css('#filterStatusBody [value="published"]')),
             },

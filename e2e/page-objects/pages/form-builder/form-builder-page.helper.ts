@@ -20,7 +20,7 @@ export class FormBuilderPageHelper {
     static async changeFilterByStatusToAll() {
         await PageHelper.click(FormBuilder.filterByStatus.root);
         await CommonPageHelper.waitForPageStabilize();
-        await PageHelper.click(FormBuilder.filterByStatus.options.all);
+        await PageHelper.scrollToElementAndClick(FormBuilder.filterByStatus.options.all);
     }
 
     static async selectOnHoldInWorkFlowStatus() {
@@ -37,7 +37,7 @@ export class FormBuilderPageHelper {
     static async clickToPopupOpenButton() {
         await PageHelper.click(FormBuilder.popupCopyButton);
         await browser.sleep(PageHelper.timeout.s);
-        await PageHelper.click(FormBuilder.popupCopyButton);
+        await PageHelper.click(FormBuilder.openButton);
     }
 
     static async selectFirstForm() {
@@ -51,7 +51,7 @@ export class FormBuilderPageHelper {
     }
 
     static async searchForWorkOrder() {
-        await TextBoxHelper.sendKeys(FormBuilder.searchTextBox, FormBuilder.uuid.uuid.toString());
+        await TextBoxHelper.sendKeys(FormBuilder.searchTextBox, FormBuilder._uuid.toString());
     }
 
     static async verifyAllStatusSelected() {

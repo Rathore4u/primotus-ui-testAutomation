@@ -31,7 +31,8 @@ export class RandomHelper {
     }
 
     static async randomString(size: number) {
-        let text = '';
+        let text: string;
+        text = '';
         const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
         for (let i = 0; i < size; i++) {
