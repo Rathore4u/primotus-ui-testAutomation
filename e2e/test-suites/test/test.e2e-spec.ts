@@ -12,7 +12,7 @@ describe(SuiteNames.healthSuite, () => {
         await LoginPageHelper.verifyNavigation();
     });
 
-    it('', async () => {
+    it('Creating a Work Order Copy and putting that to On Hold', async () => {
 
         StepLogger.caseId = 1;
         StepLogger.stepId(1);
@@ -40,6 +40,7 @@ describe(SuiteNames.healthSuite, () => {
         StepLogger.stepId(4);
         // step 4 & 5 inside the function
         StepLogger.step('Select filtered Result');
+        await FormBuilderPageHelper.openSearchDialogue();
         await FormBuilderPageHelper.selectFirstForm();
 
         StepLogger.stepId(5);
@@ -56,7 +57,7 @@ describe(SuiteNames.healthSuite, () => {
 
         StepLogger.stepId(8);
         StepLogger.step('Select filtered result');
-        await FormBuilderPageHelper.selectFirstForm();
+        await FormBuilderPageHelper.selectFirstCreatedForm();
 
         StepLogger.stepId(9);
         StepLogger.step('Select on Hold in Work Flow Status for opened card');

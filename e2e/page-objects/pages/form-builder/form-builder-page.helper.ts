@@ -34,7 +34,6 @@ export class FormBuilderPageHelper {
 
     static async performSave() {
         await browser.sleep(PageHelper.timeout.xs);
-        await WaitHelper.waitForElementToBePresent(FormBuilder.doneStatus);
         await PageHelper.click(FormBuilder.saveButton);
         await WaitHelper.waitForElementToBePresent(FormBuilder.doneStatus);
         await browser.sleep(PageHelper.timeout.s);
@@ -45,7 +44,19 @@ export class FormBuilderPageHelper {
         await PageHelper.click(FormBuilder.openButton);
     }
 
+    static async openSearchDialogue() {
+        await PageHelper.click(FormBuilder.searchButton);
+        await TextBoxHelper.sendKeys(FormBuilder.searchTextBox, FormBuilderPageConstant.formName);
+    }
+
     static async selectFirstForm() {
+        await browser.sleep(PageHelper.timeout.xs);
+        await ElementHelper.scrollToElement(FormBuilder.form);
+        await PageHelper.click(FormBuilder.form);
+        await browser.sleep(PageHelper.timeout.xs);
+    }
+
+    static async selectFirstCreatedForm() {
         await browser.sleep(PageHelper.timeout.xs);
         await ElementHelper.scrollToElement(FormBuilder.firstForm);
         await PageHelper.click(FormBuilder.firstForm);

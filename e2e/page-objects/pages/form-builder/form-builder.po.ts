@@ -30,6 +30,10 @@ export class FormBuilder {
         return element(By.css('i.fa-save'));
     }
 
+    static get searchButton() {
+        return element(By.xpath('//div[@id="searchHeader"]//button'));
+    }
+
     static get doneStatus() {
         return element(By.css('prm-loading-message'));
     }
