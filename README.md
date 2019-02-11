@@ -1,5 +1,5 @@
 # Primotus-ui-testAutomation
-
+(A video explaination is added here - https://drive.google.com/drive/folders/1-mPTuSHNl4wW7efeYiQLkCOkyqo10wKY?usp=sharing)
 This is test automation repository for Primotus' UI test automation
 It contains basic test currently
 
