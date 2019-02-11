@@ -30,17 +30,6 @@ export class RandomHelper {
         return randomEmail;
     }
 
-    static async randomString(size: number) {
-        let text: string;
-        text = '';
-        const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-        for (let i = 0; i < size; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-        return text;
-    }
-
     static getUniqueIdForCategory(length: number) {
         return Math.random().toString(36).substr(2, length);
     }
@@ -64,5 +53,16 @@ export class RandomHelper {
             randomNumber += possible.charAt(Math.floor(Math.random() * possible.length));
         }
         return randomNumber;
+    }
+
+    async randomString(size: number) {
+        let text: string;
+        text = '';
+        const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        for (let i = 0; i < size; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
     }
 }

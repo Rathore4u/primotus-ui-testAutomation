@@ -55,18 +55,11 @@ describe(SuiteNames.healthSuite, () => {
         await FormBuilderPageHelper.searchForWorkOrder();
 
         StepLogger.stepId(8);
-        // step 4 & 5 inside the function
         StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
         await FormBuilderPageHelper.selectFirstForm();
 
         StepLogger.stepId(9);
-        // step 4 & 5 inside the function
-        StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
-        await FormBuilderPageHelper.selectOnHoldInWorkFlowStatus();
-
-        StepLogger.stepId(10);
-        // step 4 & 5 inside the function
-        StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
+        StepLogger.step('Select on Hold in Work Flow Status for opened card');
         await FormBuilderPageHelper.selectOnHoldInWorkFlowStatus();
 
         StepLogger.stepId(10);

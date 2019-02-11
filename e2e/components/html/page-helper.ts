@@ -2,12 +2,12 @@
 /**
  * Page helper for general utility
  */
-import { browser, ElementArrayFinder, ElementFinder, Key, WebElement } from 'protractor';
-import { WaitHelper } from './wait-helper';
-import { JsHelper } from '../misc-utils/js-helper';
-import { StepLogger } from '../../../core/logger/step-logger';
-import { ElementHelper } from './element-helper';
-import { AlertHelper } from './alert-helper';
+import {browser, ElementArrayFinder, ElementFinder, Key, WebElement} from 'protractor';
+import {WaitHelper} from './wait-helper';
+import {JsHelper} from '../misc-utils/js-helper';
+import {StepLogger} from '../../../core/logger/step-logger';
+import {ElementHelper} from './element-helper';
+import {AlertHelper} from './alert-helper';
 
 const shortId = require('shortid');
 
@@ -395,8 +395,7 @@ export class PageHelper {
         await browser.switchTo().defaultContent();
     }
 
-    static async switchToDefaultContentAndIFrame(
-        frameOrIframeElement: ElementFinder, sleepTime = PageHelper.timeout.xs) {
+    static async switchToDefaultContentAndIFrame(frameOrIframeElement: ElementFinder, sleepTime = PageHelper.timeout.xs) {
         await browser.switchTo().defaultContent();
         await this.switchToiFrame(frameOrIframeElement, sleepTime);
     }
@@ -558,6 +557,12 @@ export class PageHelper {
     static getUniqueId(): string {
         shortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_');
         return shortId.generate().replace(/-/g, '').replace(/_/g, '');
+    }
+
+    static getUniqueStringId(size = 8): string {
+        shortId.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_');
+        const newId: string = shortId.generate();
+        return newId.substring(0, size);
     }
 
     static async navigateBack() {

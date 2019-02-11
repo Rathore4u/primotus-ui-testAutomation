@@ -41,6 +41,7 @@ export class FormBuilderPageHelper {
     }
 
     static async selectFirstForm() {
+        await browser.sleep(PageHelper.timeout.xs);
         await ElementHelper.scrollToElement(FormBuilder.form);
         await PageHelper.click(FormBuilder.form);
     }

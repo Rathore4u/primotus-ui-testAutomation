@@ -1,10 +1,10 @@
 import { element, By } from 'protractor';
 import {FormBuilderPageConstant} from './form-builder-page.constant';
-import {RandomHelper} from '../../../components/misc-utils/random-helper';
+import {PageHelper} from '../../../components/html/page-helper';
 
 export class FormBuilder {
 
-    public static _uuid = RandomHelper.randomString(8);
+    public static _uuid = PageHelper.getUniqueStringId(8);
 
     static get form() {
         return element(By.xpath(`.//div[text()="${FormBuilderPageConstant.formName}"]`));
@@ -37,7 +37,7 @@ export class FormBuilder {
     static get formDetails() {
         console.log(this._uuid.toString());
         return {
-            newFormName: `qa-${this._uuid.toString()}-${FormBuilderPageConstant.formName}}`
+            newFormName: `qa-${this._uuid.toString()}-${FormBuilderPageConstant.formName}`
         };
     }
 
