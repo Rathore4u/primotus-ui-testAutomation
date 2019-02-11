@@ -23,7 +23,7 @@ export class FormBuilder {
     }
 
     static get onHoldDropDown() {
-        return element(By.css('.//*[text()="On Hold"]'));
+        return element(By.xpath('//div[text()="On Hold"]'));
     }
 
     static get saveButton() {

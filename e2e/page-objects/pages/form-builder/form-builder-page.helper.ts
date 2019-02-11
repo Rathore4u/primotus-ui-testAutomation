@@ -24,19 +24,24 @@ export class FormBuilderPageHelper {
     }
 
     static async selectOnHoldInWorkFlowStatus() {
-        await PageHelper.scrollToElementAndClick(FormBuilder.workFlowStatusDropdown);
+        await browser.sleep(PageHelper.timeout.s);
+        await PageHelper.scrollToElement(FormBuilder.workFlowStatusDropdown);
+        await browser.sleep(PageHelper.timeout.xs);
+        await PageHelper.click(FormBuilder.workFlowStatusDropdown);
+        await browser.sleep(PageHelper.timeout.xs);
         await PageHelper.click(FormBuilder.onHoldDropDown);
     }
 
     static async performSave() {
+        await browser.sleep(PageHelper.timeout.xs);
         await WaitHelper.waitForElementToBePresent(FormBuilder.doneStatus);
         await PageHelper.click(FormBuilder.saveButton);
         await WaitHelper.waitForElementToBePresent(FormBuilder.doneStatus);
+        await browser.sleep(PageHelper.timeout.s);
     }
 
     static async clickToPopupOpenButton() {
-        // await PageHelper.click(FormBuilder.popupCopyButton);
-        await browser.sleep(PageHelper.timeout.s);
+        await browser.sleep(PageHelper.timeout.xs);
         await PageHelper.click(FormBuilder.openButton);
     }
 
@@ -52,7 +57,7 @@ export class FormBuilderPageHelper {
         console.log(FormBuilder.formDetails.newFormName);
         await TextBoxHelper.sendKeys(FormBuilder.textBoxField, FormBuilder.formDetails.newFormName);
         await PageHelper.click(FormBuilder.popupCopyButton);
-        await browser.sleep(PageHelper.timeout.l);
+        await browser.sleep(PageHelper.timeout.s);
     }
 
     static async searchForWorkOrder() {

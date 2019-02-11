@@ -64,7 +64,7 @@ describe(SuiteNames.healthSuite, () => {
 
         StepLogger.stepId(10);
         // step 4 & 5 inside the function
-        StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
+        StepLogger.step('Save the form for On Hold Status');
         await FormBuilderPageHelper.performSave();
     });
 });
