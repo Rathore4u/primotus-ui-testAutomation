@@ -39,7 +39,7 @@ describe(SuiteNames.healthSuite, () => {
 
         StepLogger.stepId(4);
         // step 4 & 5 inside the function
-        StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
+        StepLogger.step('Select filtered Result');
         await FormBuilderPageHelper.selectFirstForm();
 
         StepLogger.stepId(5);
@@ -55,7 +55,7 @@ describe(SuiteNames.healthSuite, () => {
         await FormBuilderPageHelper.searchForWorkOrder();
 
         StepLogger.stepId(8);
-        StepLogger.step('Select form card then use copy button to copy that form and add uuid and prefix “qa-”');
+        StepLogger.step('Select filtered result');
         await FormBuilderPageHelper.selectFirstForm();
 
         StepLogger.stepId(9);

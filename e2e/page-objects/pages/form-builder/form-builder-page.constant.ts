@@ -15,7 +15,7 @@ export class FormBuilderPageConstant {
 
     static get locators() {
         return {
-            workFlowStatusDropdown: './/*[@data-od-tooltip="DS Type Work Order" and contains(text(),\'Workflow Status\')]//ancestor::div[@class="item-container"]',
+            workFlowStatusDropdown: '//*[@data-od-tooltip="DS Type Work Order" and contains(text(),"Workflow Status")]//ancestor::div[@class="item-container"]',
         };
     }
 }

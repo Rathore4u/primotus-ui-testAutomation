@@ -10,6 +10,10 @@ export class FormBuilder {
         return element(By.xpath(`.//div[text()="${FormBuilderPageConstant.formName}"]`));
     }
 
+    static get firstForm() {
+        return element(By.xpath(`.//div[contains(text(),"${FormBuilderPageConstant.formName}")]`));
+    }
+
     static get workFlowStatusDropdown() {
         return element(By.xpath(`${FormBuilderPageConstant.locators.workFlowStatusDropdown}`));
     }

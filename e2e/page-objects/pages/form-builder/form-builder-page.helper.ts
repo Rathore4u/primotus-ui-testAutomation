@@ -24,7 +24,7 @@ export class FormBuilderPageHelper {
     }
 
     static async selectOnHoldInWorkFlowStatus() {
-        await PageHelper.click(FormBuilder.workFlowStatusDropdown);
+        await PageHelper.scrollToElementAndClick(FormBuilder.workFlowStatusDropdown);
         await PageHelper.click(FormBuilder.onHoldDropDown);
     }
 
@@ -35,24 +35,29 @@ export class FormBuilderPageHelper {
     }
 
     static async clickToPopupOpenButton() {
-        await PageHelper.click(FormBuilder.popupCopyButton);
+        // await PageHelper.click(FormBuilder.popupCopyButton);
         await browser.sleep(PageHelper.timeout.s);
         await PageHelper.click(FormBuilder.openButton);
     }
 
     static async selectFirstForm() {
         await browser.sleep(PageHelper.timeout.xs);
-        await ElementHelper.scrollToElement(FormBuilder.form);
-        await PageHelper.click(FormBuilder.form);
+        await ElementHelper.scrollToElement(FormBuilder.firstForm);
+        await PageHelper.click(FormBuilder.firstForm);
+        await browser.sleep(PageHelper.timeout.xs);
     }
 
     static async clickOnCopyAndPrefix() {
         await PageHelper.click(FormBuilder.copyButton);
+        console.log(FormBuilder.formDetails.newFormName);
         await TextBoxHelper.sendKeys(FormBuilder.textBoxField, FormBuilder.formDetails.newFormName);
+        await PageHelper.click(FormBuilder.popupCopyButton);
+        await browser.sleep(PageHelper.timeout.l);
     }
 
     static async searchForWorkOrder() {
-        await TextBoxHelper.sendKeys(FormBuilder.searchTextBox, FormBuilder._uuid.toString());
+        console.log(FormBuilder._uuid.toString());
+        await TextBoxHelper.sendKeys(FormBuilder.searchTextBox, 'qa-' + FormBuilder._uuid.toString());
     }
 
     static async verifyAllStatusSelected() {
